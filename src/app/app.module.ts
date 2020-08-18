@@ -19,14 +19,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SidebarComponent,
     DashboardComponent
- 
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]
